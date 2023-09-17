@@ -25,10 +25,13 @@
 
     let changeColor;
     let startchangeBgcolor=function(){
+        if(!changeColor){
         changeColor=setInterval(changeHashCode,1000);
+        }
     }
     let stopChnageColor=function(){
         clearInterval(changeColor);
+        changeColor=null;
     }
 
     document.querySelector("#start").addEventListener("click",startchangeBgcolor)
