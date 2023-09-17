@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChangeBgcolor</title>
+</head>
+
+<body>
+    <h1>Color Code is :</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let hex = "0123456789ABCDEF";
+
+    let changeHashCode = function () {
+        let hash = "#";
+        for (i = 0; i < 6; i++) {
+            hash+=hex[Math.floor(Math.random()*16)];
+        }
+        document.querySelector("h1").innerHTML="Color Code is : "+hash;
+        document.body.style.backgroundColor=hash;
+    }
+
+    let changeColor;
+    let startchangeBgcolor=function(){
+        changeColor=setInterval(changeHashCode,1000);
+    }
+    let stopChnageColor=function(){
+        clearInterval(changeColor);
+    }
+
+    document.querySelector("#start").addEventListener("click",startchangeBgcolor)
+    document.querySelector("#stop").addEventListener("click",stopChnageColor)
+</script>
+
+</html>

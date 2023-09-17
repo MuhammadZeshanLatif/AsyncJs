@@ -1,0 +1,38 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hi Zeeshan</h1>
+    <button id="set">Stop class</button>
+    <button id="set2">Stop Zeeshan</button>
+</body>
+<script>
+  const sayHi=function(){
+    console.log('Hi Class')
+  }
+  const changeME=function(){
+    document.querySelector('h1').innerHTML="Hi Class how are you";
+  }
+  const changeMEagain=function(){
+    document.querySelector('h1').innerHTML="Hi Again Zeeshan";
+  }
+   const setTime=setTimeout(changeME,2000); 
+   const setTimeagain=setTimeout(changeMEagain,5000); 
+
+   document.querySelector("#set").addEventListener("click",function(){
+    console.log("stop class successful")
+    clearTimeout(setTime);
+   });
+   document.querySelector("#set2").addEventListener("click",function(){
+    console.log("stop Zeeshan Successful");
+    clearTimeout(setTimeagain);
+   });
+
+
+  
+
+</script>
+</html>
