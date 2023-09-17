@@ -1,0 +1,76 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let promis1 = new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Hello Promis 1");
+            resolve();
+        }, 3000)
+    });
+
+
+    promis1.then(function () {
+        setTimeout(function () {
+            console.log("promis resolve");
+        }, 3000)
+    }).then(function () {
+        setTimeout(function () {
+            console.log("Again resolve");
+        }, 1000)
+
+    });
+
+
+    new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            console.log("Hello Promis 2");
+            resolve("promis 2 resolve");
+        }, 3000)
+    }).then(function (x) {
+        setTimeout(function () {
+            console.log(x);
+        }, 3000)
+    }).then(function () {
+        setTimeout(function () {
+            console.log("Again 2 resolve");
+        }, 1000)
+    });
+    // Mian syntex
+
+    let mainPromi = new Promise((resolve, reject) => {
+        let bool = false;
+        if (!bool) {
+            setTimeout(() => {
+                resolve("Promis resolve")
+            }, 3000);
+        }
+        else {
+            reject("Promis Reject")
+        }
+    });
+
+    mainPromi.then((x) => {
+        console.log(x);
+    }).catch((x) => {
+        console.log(x);
+    }).finally(() => {
+       
+            console.log("Resolve or reject")
+      
+    })
+
+
+
+
+</script>
+
+</html>
