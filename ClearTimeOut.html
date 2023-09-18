@@ -1,0 +1,31 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClearTimeOut</title>
+</head>
+
+<body>
+    <h1>Hi Class</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let hiClass = document.querySelector("h1");
+    let stopTime = document.querySelector("#stop");
+    let byeClass;
+    let changeclass = () => {
+        byeClass = setTimeout(() => {
+            hiClass.innerHTML = "Welcome class";
+        }, 5000)
+    }
+    stopTime.addEventListener("click", () => {
+        clearTimeout(byeClass);
+        console.log("Stop")
+    });
+
+    changeclass();
+
+</script>
+
+</html>

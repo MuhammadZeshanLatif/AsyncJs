@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeOut</title>
+</head>
+
+<body>
+    <h1>Hi class</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let fun1 = () => {
+        setTimeout(()=>{
+            console.log('I am function 1')
+        },5000)      
+    }
+    let fun2 = () => {
+        console.log('I am function 2')
+    }
+    let fun3 = () => {
+        console.log('I am function 3')
+    }
+
+
+    let fun = () => { 
+        console.log('Start');
+        fun3();
+        fun1();
+        fun2();
+        console.log("End")
+    }
+    fun();
+
+</script>
+
+</html>
