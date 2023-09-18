@@ -7,19 +7,48 @@
 </head>
 
 <body>
-    <h1>Class is Stop</h1>
+    <h1>Class is Stop :</h1>
+    <button id="start">start</button>
     <button id="stop">Stop</button>
 </body>
 <script>
-    let start = document.querySelector("h1");
-    let stopClass = document.querySelector("#stop");
-    let stratTime=setTimeout(function () {
-        start.innerHTML="Class is Now Start"
-    }, 5000);
+    // let start = document.querySelector("h1");
+    // let startInterval = document.querySelector("#start");
+    // let stopInterval = document.querySelector("#stop");
+    // let count = 0;
+    // let intervalTime;
+    // let startIntervalCount = () => {
+    //     if (!intervalTime) {
+    //         intervalTime = setInterval(function () {
+    //             count++;
+    //             start.innerHTML = `Class is Start : ${count}`;
+    //         }, 1000)
+    //     }
+    // }
+    // let stopIntervalCount = () => {
+    //     clearInterval(intervalTime);
+    //      intervalTime=null;
+    // }
 
-    stopClass.addEventListener("click",function(){
-        clearTimeout(stratTime);
-        console.log("class stop")
+    // startInterval.addEventListener("click", startIntervalCount)
+    // stopInterval.addEventListener("click", stopIntervalCount);
+
+    let promis1 = new Promise((resolve, reject) => {
+        var bools = false;
+        if (!bools) {
+            setTimeout(function () {
+                console.log("I Am Promise 1")
+                resolve();
+            }, 1000)
+        }else{
+            reject();
+        }
+
+    })
+    promis1.then(function () {
+        console.log("Promise resolve")
+    }).catch(function () {
+        console.log("Promise reject");
     })
 
 
