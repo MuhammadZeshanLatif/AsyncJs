@@ -1,0 +1,40 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetInterval</title>
+</head>
+
+<body>
+    <h1>Stop Class:</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    let heading = document.querySelector("h1");
+    let startBtn = document.querySelector("#start");
+    let stopBtn = document.querySelector("#stop");
+    let count = 0;
+    let startInterval;
+    let changeHeading = () => {
+        if (!startInterval) {
+            startInterval = setInterval(() => {
+                count++;
+                heading.innerHTML = `Stop Class: ${count}`;
+            }, 1000);
+        }
+
+    }
+    startBtn.addEventListener("click", changeHeading);
+    stopBtn.addEventListener("click", () => {
+        clearInterval(startInterval);
+        startInterval=null;
+    });
+
+
+
+
+</script>
+
+</html>

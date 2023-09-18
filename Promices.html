@@ -1,0 +1,38 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Promices</title>
+</head>
+
+<body>
+
+</body>
+
+<script>
+    let flag = false;
+    let promis1 = new Promise((resolve, reject) => {
+        if (flag) {
+            setTimeout(function () {
+                console.log("Hi class");
+                resolve();
+            }, 3000)
+        }
+        else{
+            reject();
+        }
+
+    }).then(function () {
+        console.log("promis resolve");
+    }).catch(() => {
+        console.log("prmise reject");
+    });
+
+
+</script>
+
+
+
+
+</html>
